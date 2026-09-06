@@ -314,13 +314,24 @@
       if (!pop.contains(e.target) && e.target !== input) pop.classList.remove("show");
     });
     input.addEventListener("focus", function () { if (input.value.trim()) doSearch(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "/" && e.target && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+        e.preventDefault();
+        input.focus();
+      }
+    });
   }
 
   /* ---------- 自测 ---------- */
   function initQuiz() {
     var host = $("#quizHost");
     if (!host || !window.QUIZ_DATA || !QUIZ_DATA.length) return;
-    var html = [];
+    var html = ['<div class="quiz-scorebar"><span class="qz-t">📝 本章自测</span>'
+      + '<span class="qz-dots" id="qzDots">' + QUIZ_DATA.map(function (_, i) {
+        return '<span class="qz-dot" data-qi="' + i + '"></span>';
+      }).join("") + '</span>'
+      + '<span class="qz-stat">已答 <b id="qzDone">0</b> / ' + QUIZ_DATA.length
+      + ' · 正确 <b id="qzRight">0</b></span></div>'];
     QUIZ_DATA.forEach(function (q, qi) {
       html.push('<div class="quiz-item" data-qi="' + qi + '"><div class="q-t"><span class="qn">' +
         (qi + 1) + "</span><span>" + esc(q.q) + "</span></div>");
@@ -332,6 +343,7 @@
     });
     host.innerHTML = html.join("");
 
+    var qzDone = 0, qzRight = 0;
     $all(".quiz-item", host).forEach(function (item) {
       var qi = +item.getAttribute("data-qi");
       var q = QUIZ_DATA[qi];
@@ -345,6 +357,12 @@
             else if (j === oi) o2.classList.add("wrong");
             else o2.classList.add("dim");
           });
+          var dot = document.querySelector('.qz-dot[data-qi="' + qi + '"]');
+          if (dot) dot.classList.add(oi === q.a ? "right" : "wrong");
+          qzDone++; if (oi === q.a) qzRight++;
+          var elD = $("#qzDone"), elR = $("#qzRight");
+          if (elD) elD.textContent = qzDone;
+          if (elR) elR.textContent = qzRight;
         }
         opt.addEventListener("click", pick);
         opt.addEventListener("keydown", function (e) {
@@ -354,40 +372,213 @@
     });
   }
 
-  /* ---------- 思维导图控制 ---------- */
+  /* ---------- 思维导图专业控制台（自建实例·完全控制） ---------- */
   function initMap() {
     var box = $(".map-box");
     if (!box) return;
+    var holder = $(".markmap", box);
     var fb = $(".map-fallback", box);
     var hint = $(".map-toolbar .hint", box);
+    var info = $("[data-mapinfo]", box);
+    var tpl = holder ? holder.querySelector("script") : null;
+    var mdSource = tpl ? tpl.textContent.trim() : "";
+    var mapTitle = ((window.CH_NUM ? "第" + window.CH_NUM + "章思维导图"
+      : (($(".ch-hero h1") && $(".ch-hero h1").textContent) || "思维导图")) + "")
+      .replace(/[\\\/:*?"<>|]/g, "").trim();
+    var mm = null;
 
-    function fakeWheel(dy) {
-      var svg = $("svg", box);
-      if (!svg || dy === 0) return;
-      var r = svg.getBoundingClientRect();
-      svg.dispatchEvent(new WheelEvent("wheel", {
-        bubbles: true, cancelable: true, deltaY: dy,
-        clientX: r.left + r.width / 2, clientY: r.top + r.height / 2
-      }));
-    }
-    var zi = $("[data-zoomin]", box), zo = $("[data-zoomout]", box), fit = $("[data-fit]", box);
-    if (zi) zi.addEventListener("click", function () { fakeWheel(-330); });
-    if (zo) zo.addEventListener("click", function () { fakeWheel(330); });
-    if (fit) fit.addEventListener("click", function () {
-      var holder = $(".markmap", box);
-      try {
-        if (holder && holder.markmap && typeof holder.markmap.fit === "function") holder.markmap.fit();
-      } catch (e) { /* 忽略 */ }
-    });
-
-    setTimeout(function () {
-      var ok = !!$("svg", box);
-      if (fb) fb.style.display = ok ? "none" : "block";
-      if (!ok && hint) {
+    function showFallback() {
+      if (fb) fb.style.display = "block";
+      if (hint) {
         hint.innerHTML = "⚠ 思维导图组件需联网加载，当前已降级为文字版大纲（内容完全一致）";
         hint.style.color = "#b45309";
       }
-    }, 4000);
+    }
+
+    function getMM() { return (mm && mm.svg && mm.zoom) ? mm : null; }
+    function zoomBy(f) {
+      var m = getMM();
+      if (!m) return;
+      try { m.svg.transition().duration(220).call(m.zoom.scaleBy, f); } catch (e) { /* noop */ }
+    }
+    function zoomReset() {
+      var m = getMM();
+      if (!m) return;
+      try { m.svg.transition().duration(220).call(m.zoom.scaleTo, 1); } catch (e) { /* noop */ }
+    }
+    function fit() {
+      var m = getMM();
+      if (!m) return;
+      try { m.fit(); } catch (e) { /* noop */ }
+    }
+    function setFold(level) {
+      var m = getMM();
+      if (!m || !m.state || !m.state.data) return false;
+      try {
+        var clone = JSON.parse(JSON.stringify(m.state.data, function (k, v) {
+          return (k === "state" || k === "parent") ? undefined : v;
+        }));
+        (function walk(n, d) {
+          if (!n) return;
+          if (!n.payload) n.payload = {};
+          var kids = n.children || [];
+          n.payload.fold = (d >= level && kids.length) ? 1 : 0;
+          kids.forEach(function (c) { walk(c, d + 1); });
+        })(clone, 0);
+        m.setData(clone);
+        setTimeout(function () { try { m.fit(); } catch (e) { /* noop */ } }, 90);
+        refreshInfo();
+        return true;
+      } catch (e) { return false; }
+    }
+    function countNodes() {
+      var m = getMM();
+      if (m && m.state && m.state.data) {
+        var n = 0;
+        (function walk(x) { if (!x) return; n++; (x.children || []).forEach(walk); })(m.state.data);
+        return n;
+      }
+      return 0;
+    }
+    function refreshInfo() {
+      if (info) info.textContent = countNodes() + " 节点";
+    }
+
+    function toggleFS() {
+      try {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else if (box.requestFullscreen) box.requestFullscreen();
+      } catch (e) { /* noop */ }
+    }
+
+    function downloadBlob(blob, name) {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 900);
+    }
+    function svgMarkup() {
+      var svg = box.querySelector("svg");
+      if (!svg) return null;
+      var clone = svg.cloneNode(true);
+      var w = 0, h = 0;
+      try {
+        var b = svg.getBBox();
+        w = Math.ceil(b.width) + 80;
+        h = Math.ceil(b.height) + 80;
+      } catch (e) {
+        w = svg.clientWidth || 1200;
+        h = svg.clientHeight || 800;
+      }
+      clone.setAttribute("width", w);
+      clone.setAttribute("height", h);
+      clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      var st = document.createElementNS("http://www.w3.org/2000/svg", "style");
+      st.textContent = "svg{background:" + (dark ? "#151823" : "#ffffff") + ";}" +
+        ".markmap-foreign{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;" +
+        "font-size:14px;line-height:1.55;color:" + (dark ? "#c9d0e0" : "#1f2430") + ";}" +
+        ".markmap-foreign div{white-space:pre-wrap;}";
+      clone.insertBefore(st, clone.firstChild);
+      return { markup: new XMLSerializer().serializeToString(clone), w: w, h: h };
+    }
+    function exportSVG() {
+      var m = svgMarkup();
+      if (!m) return;
+      downloadBlob(new Blob([m.markup], { type: "image/svg+xml;charset=utf-8" }), mapTitle + ".svg");
+    }
+    function exportPNG() {
+      var m = svgMarkup();
+      if (!m) return;
+      var blob = new Blob([m.markup], { type: "image/svg+xml;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var img = new Image();
+      img.onload = function () {
+        var cv = document.createElement("canvas");
+        var scale = 2;
+        cv.width = m.w * scale;
+        cv.height = m.h * scale;
+        var ctx = cv.getContext("2d");
+        ctx.drawImage(img, 0, 0, cv.width, cv.height);
+        URL.revokeObjectURL(url);
+        try {
+          cv.toBlob(function (b) { if (b) downloadBlob(b, mapTitle + ".png"); }, "image/png");
+        } catch (e) { /* noop */ }
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); };
+      img.src = url;
+    }
+
+    var acts = [
+      ["[data-zoomin]", function () { zoomBy(1.25); }],
+      ["[data-zoomout]", function () { zoomBy(0.8); }],
+      ["[data-reset]", zoomReset],
+      ["[data-fit]", fit],
+      ["[data-expand]", function () { setFold(99); }],
+      ["[data-fold]", function () { setFold(2); }],
+      ["[data-fs]", toggleFS],
+      ["[data-export-png]", exportPNG],
+      ["[data-export-svg]", exportSVG]
+    ];
+    acts.forEach(function (pair) {
+      var el = box.querySelector(pair[0]);
+      if (el) el.addEventListener("click", pair[1]);
+    });
+
+    /* 快捷键：+ − 0 F（仅当导图在视口内且不在输入框） */
+    document.addEventListener("keydown", function (e) {
+      if (e.target && /^(input|textarea|select)$/i.test(e.target.tagName)) return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      var r = box.getBoundingClientRect();
+      if (r.top >= window.innerHeight || r.bottom <= 0) return;
+      if (e.key === "+" || e.key === "=") zoomBy(1.25);
+      else if (e.key === "-" || e.key === "_") zoomBy(0.8);
+      else if (e.key === "0") fit();
+      else if (e.key === "f" || e.key === "F") toggleFS();
+    });
+
+    /* 手动渲染管线：等 markmap 类库就绪后自建实例 */
+    if (!mdSource) { showFallback(); return; }
+    var svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgEl.setAttribute("class", "markmap-svg");
+    holder.appendChild(svgEl);
+
+    var waited = 0;
+    var timer = setInterval(function () {
+      waited += 120;
+      var ns = window.markmap;
+      if (ns && ns.Markmap && ns.Transformer) {
+        clearInterval(timer);
+        try {
+          var transformer = new ns.Transformer();
+          var finish = function (result) {
+            try {
+              var opts = (result.frontmatter && result.frontmatter.markmap) || {};
+              if (typeof ns.Markmap.create === "function") {
+                mm = ns.Markmap.create(svgEl, opts, result.root);
+              } else {
+                mm = new ns.Markmap(svgEl, opts);
+                mm.setData(result.root);
+              }
+              holder.mm = mm;
+              setTimeout(function () { try { mm.fit(); } catch (e) { /* noop */ } }, 120);
+              refreshInfo();
+            } catch (err) { showFallback(); }
+          };
+          var res = transformer.transform(mdSource);
+          if (res && typeof res.then === "function") {
+            res.then(finish).catch(showFallback);
+          } else {
+            finish(res);
+          }
+        } catch (err) { showFallback(); }
+      } else if (waited > 9000) {
+        clearInterval(timer);
+        showFallback();
+      }
+    }, 120);
   }
 
   /* ---------- 章节访问记录 ---------- */
