@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>软考高项学习平台 · 信息系统项目管理师（零基础）</title>
+<meta name="description" content="信息系统项目管理师（软考高级）零基础学习平台：24章思维导图、通俗精讲、考点速记与自测，内容依据官方教程第4版整理。">
+<meta name="author" content="软考高项学习平台">
+<meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>项</text></svg>">
+<link rel="stylesheet" href="../assets/style.css?v=21">
+<script src="../assets/nav-data.js"></script>
+<script src="../assets/search-data.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="logo">项</div>
+    <div><div class="bt">软考高项学习平台</div><div class="bs">信息系统项目管理师 · 第4版教程</div></div>
+  </div>
+  <div class="side-search">
+    <span class="ic">🔍</span>
+    <input id="searchInput" type="text" placeholder="搜索章节 / 考点…">
+    <div class="search-pop" id="searchPop"></div>
+  </div>
+  <nav id="navHost"></nav>
+</aside>
+<div id="scrim"></div>
+<div class="main">
+  <div class="topbar"><div class="in">
+    <button class="icon-btn" id="menuBtn" title="目录">☰</button>
+    <div class="crumb"><a href="../index.html">首页</a> / <a href="../index.html#part3">十大领域</a> / <b>第10章 项目进度管理</b></div>
+    <div class="sp"></div>
+    <div class="mini-progress"><div class="bar"><i id="miniBar"></i></div><span id="miniBarTxt"></span></div>
+    <button class="icon-btn" id="themeBtn" title="切换深浅色">🌙</button>
+  </div></div>
+  
+<div class="wrap">
+  <div class="ch-hero">
+    <div class="kicker">
+      <span class="badge" style="background:#db27771a;color:#db2777;border-color:#db277755">第三部分 · 十大知识领域</span>
+      <span class="badge gray">第 10 章 · 官方教程第4版</span>
+    </div>
+    <h1>项目进度管理</h1>
+    <div class="lead">“什么时候干完”：活动定义与排序、工期估算（三点估算）、进度计划编制（关键路径法）与进度压缩控制。</div>
+    
+    <div class="ch-meta">
+      <div class="meta-card"><div class="k">考情 · 分值与题型</div><div class="v">综合知识约 5~7 分；案例必考计算（关键路径/挣值）；论文高频</div></div>
+      <div class="meta-card"><div class="k">难度</div><div class="v"><span class="stars">★★★★<span class="off">★</span></span></div></div>
+      <div class="meta-card"><div class="k">考试重要度</div><div class="v"><span class="stars">★★★★★<span class="off"></span></span></div></div>
+      <div class="meta-card"><div class="k">建议学习时长</div><div class="v">约 8 小时</div></div>
+    </div>
+    <div class="study-bar">
+      <button class="btn-sm btn-mark" id="markBtn">○ 标记本章已掌握</button>
+      <div class="jump">
+        <a href="#sec-map">🗺 思维导图</a><a href="#sec-body">📖 知识精讲</a>
+        <a href="#sec-recite">🎯 考点速记</a><a href="#sec-quiz">✍ 自测</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" id="sec-intro">
+    <div class="sec-head"><span class="emoji">🧭</span><h2>零基础导航 · 先读懂这一章在讲什么</h2></div>
+    <div class="article"><div class="co co-story"><div class="co-t">🍿 装修排工期</div><p>进度管理就是装修队的<strong>排期表</strong>：先列出所有工序（<strong>定义活动</strong>）、确定“先水电后泥木”的顺序（<strong>排列顺序</strong>）、估计每道工序要几天（<strong>估算历时</strong>， uncertainties 用三点估算）、排出总工期并找出“一天都不能拖”的关键线路（<strong>关键路径</strong>）、最后赶工期时选择加人或并行（<strong>赶工/快速跟进</strong>）。</p></div>
+<div class="co co-tip"><div class="co-t">💡 本章是“计算题之王”</div><p>案例分析的进度计算题几乎每年必考：<strong>画网络图→算关键路径→算总时差/自由时差→判断工期与赶工方案</strong>。公式不多但必须熟练，参见“公式大全”专题页。</p></div></div>
+  </section>
+
+  <section class="sec" id="sec-map">
+    <div class="sec-head"><span class="emoji">🗺️</span><h2>本章思维导图</h2><span class="tag">点击节点可展开/折叠 · 滚轮缩放 · 拖拽平移</span></div>
+    <div class="map-box">
+      <div class="map-toolbar">
+        <span class="hint">基于官方教程第4版目录与知识点绘制</span>
+        <a data-zoomin title="放大">➕ 放大</a><a data-zoomout title="缩小">➖ 缩小</a><a data-fit>⤢ 适应窗口</a>
+      </div>
+      <div class="markmap map-svg"><script type="text/template">
+---
+markmap:
+  maxWidth: 300
+  initialExpandLevel: 3
+---
+# 第10章 项目进度管理
+## 10.1 管理基础
+### 进度管理：在既定工期内完成可交付成果
+## 10.2 过程总览（6个）
+#### 规划进度管理、定义活动、排列活动顺序、估算持续时间、制定进度计划、控制进度
+## 10.3 规划进度管理
+### 输出：进度管理计划（计量单位、控制临界值等）
+## 10.4 定义活动
+### 输出：活动清单、活动属性、里程碑清单
+### 里程碑：持续时间=0的重要事件
+## 10.5 排列活动顺序
+### 紧前关系绘图法PDM（节点法AON）
+### 四种逻辑关系：FS、FF、SS、SF（FS最常用）
+### 三类依赖：强制性（硬逻辑）、选择性（软逻辑）、外部依赖
+### 提前量与滞后量
+### 输出：项目进度网络图
+## 10.6 估算活动持续时间
+### 类比估算（上次的类似项目）
+### 参数估算（历史数据×参数模型）
+### 三点估算：β分布 (O+4M+P)/6；三角分布 (O+M+P)/3
+### 自下而上估算（先分解再累加，最准确成本最高）
+### 储备分析：应急储备（已知-未知风险）
+## 10.7 制定进度计划
+### 关键路径法CPM：最长路径决定总工期
+### 总时差TF=LS-ES=LF-EF；自由时差FF=紧后ES-本EF
+### 关键路径上总时差=0（可能为负）
+### 资源优化：资源平衡（改变工期）/资源平滑（不改变工期）
+### 进度压缩：赶工（加资源+成本）/快速跟进（并行+风险）
+### 输出：进度基准、项目进度计划（甘特图等）
+## 10.8 控制进度
+### 挣值分析（SV/SPI）、迭代燃尽图
+### 输出：工作绩效信息、进度预测、变更请求
+      </script></div>
+      <details class="map-fallback" style="display:none">
+        <summary>📖 文字版大纲（导图加载失败时查看，内容一致）</summary>
+        <pre>■ 第10章 项目进度管理
+├─ 10.1 管理基础
+│   ├─ 进度管理：在既定工期内完成可交付成果
+├─ 10.2 过程总览（6个）
+│   │   · 规划进度管理、定义活动、排列活动顺序、估算持续时间、制定进度计划、控制进度
+├─ 10.3 规划进度管理
+│   ├─ 输出：进度管理计划（计量单位、控制临界值等）
+├─ 10.4 定义活动
+│   ├─ 输出：活动清单、活动属性、里程碑清单
+│   ├─ 里程碑：持续时间=0的重要事件
+├─ 10.5 排列活动顺序
+│   ├─ 紧前关系绘图法PDM（节点法AON）
+│   ├─ 四种逻辑关系：FS、FF、SS、SF（FS最常用）
+│   ├─ 三类依赖：强制性（硬逻辑）、选择性（软逻辑）、外部依赖
+│   ├─ 提前量与滞后量
+│   ├─ 输出：项目进度网络图
+├─ 10.6 估算活动持续时间
+│   ├─ 类比估算（上次的类似项目）
+│   ├─ 参数估算（历史数据×参数模型）
+│   ├─ 三点估算：β分布 (O+4M+P)/6；三角分布 (O+M+P)/3
+│   ├─ 自下而上估算（先分解再累加，最准确成本最高）
+│   ├─ 储备分析：应急储备（已知-未知风险）
+├─ 10.7 制定进度计划
+│   ├─ 关键路径法CPM：最长路径决定总工期
+│   ├─ 总时差TF=LS-ES=LF-EF；自由时差FF=紧后ES-本EF
+│   ├─ 关键路径上总时差=0（可能为负）
+│   ├─ 资源优化：资源平衡（改变工期）/资源平滑（不改变工期）
+│   ├─ 进度压缩：赶工（加资源+成本）/快速跟进（并行+风险）
+│   ├─ 输出：进度基准、项目进度计划（甘特图等）
+├─ 10.8 控制进度
+│   ├─ 挣值分析（SV/SPI）、迭代燃尽图
+│   ├─ 输出：工作绩效信息、进度预测、变更请求</pre>
+      </details>
+    </div>
+  </section>
+
+  <section class="sec" id="sec-body">
+    <div class="sec-head"><span class="emoji">📖</span><h2>知识精讲 · 通俗版</h2></div>
+    <div class="article"><h3>10.4 定义活动</h3>
+<p>把工作包进一步分解为<strong>活动</strong>（可估算、可执行的具体任务）。输出：<strong>活动清单、活动属性、里程碑清单</strong>。<strong>里程碑</strong>是持续时间为0的重要时间点或事件（“签字验收”，不是“干活”）。</p>
+<h3>10.5 排列活动顺序</h3>
+<p><strong>紧前关系绘图法（PDM，也叫单代号网络图AON）</strong>：用节点表示活动、箭线表示逻辑关系。四种逻辑关系：</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>关系</th><th>含义</th><th>举例</th></tr></thead><tbody><tr><td><strong>FS</strong>（完成→开始）</td><td>A完成B才能开始</td><td>刷完墙才能铺地板（最常用）</td></tr><tr><td><strong>FF</strong>（完成→完成）</td><td>A完成B才能完成</td><td></td></tr><tr><td><strong>SS</strong>（开始→开始）</td><td>A开始B才能开始</td><td></td></tr><tr><td><strong>SF</strong>（开始→完成）</td><td>最少用</td><td></td></tr></tbody></table></div>
+<p>三类依赖关系：<strong>强制性依赖</strong>（硬逻辑，物理/合同限制）、<strong>选择性依赖</strong>（软逻辑，经验偏好）、<strong>外部依赖</strong>（项目外因素，如政府审批）。<strong>提前量</strong>（负滞后：提前2天开始）/ <strong>滞后量</strong>（等待3天养护）。</p>
+<h3>10.6 估算活动持续时间（方法必考）</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>方法</th><th>思路</th><th>特点</th></tr></thead><tbody><tr><td><strong>类比估算</strong></td><td>参考类似项目的历史数据</td><td>便宜、粗略，需真实可比</td></tr><tr><td><strong>参数估算</strong></td><td>历史数据×参数模型（元/平米）</td><td>依赖模型质量</td></tr><tr><td><strong>三点估算</strong></td><td>考虑不确定性：乐观O、最可能M、悲观P</td><td>β分布 (O+4M+P)/6；三角分布 (O+M+P)/3</td></tr><tr><td><strong>自下而上估算</strong></td><td>分解到活动逐层累加</td><td>最准但最费时</td></tr></tbody></table></div>
+<p><strong>储备分析</strong>：<strong>应急储备</strong>应对“已知—未知风险”（已识别但发生不确定），含在进度基准内。</p>
+<h3>10.7 制定进度计划（计算核心）</h3>
+<h4>关键路径法（CPM）</h4>
+<p><strong>关键路径=网络图中最长的路径，决定项目最短总工期</strong>。关键路径上活动叫关键活动，<strong>总时差为零或负</strong>（负值表示已延误必须赶回）。注意：关键路径<strong>可能不止一条</strong>，越多风险越大。</p>
+<p>时间参数计算：</p>
+<ul><li><strong>ES/EF</strong>：最早开始/最早结束（EF=ES+工期，正向取大）；</li><li><strong>LS/LF</strong>：最晚开始/最晚结束（反向取小）；</li><li><strong>总时差 TF = LS−ES = LF−EF</strong>：不影响<strong>总工期</strong>最多可拖延的时间；</li><li><strong>自由时差 FF = min(紧后活动ES) − 本活动EF</strong>：不影响<strong>紧后活动最早开始</strong>的拖延时间。</li><li>恒有 <strong>FF ≤ TF</strong>。</li></ul>
+<h4>资源优化</h4>
+<ul><li><strong>资源平衡</strong>：资源不够时调整起止时间，<strong>可能改变关键路径与工期</strong>；</li><li><strong>资源平滑</strong>：在时差范围内调剂资源峰值，<strong>不改变工期</strong>。</li></ul>
+<h4>进度压缩（案例高频）</h4>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>方式</th><th>做法</th><th>代价</th></tr></thead><tbody><tr><td><strong>赶工</strong></td><td>加班、加人、加设备</td><td><strong>增加成本</strong></td></tr><tr><td><strong>快速跟进</strong></td><td>原顺序活动改为并行</td><td><strong>增加风险（返工）</strong></td></tr></tbody></table></div>
+<p>输出：<strong>进度基准</strong>（经批准的进度模型，只能变更控制修改）+ 项目进度计划（表现形式：<strong>甘特图/横道图</strong>、里程碑图、进度网络图）。</p>
+<h3>10.8 控制进度</h3>
+<p>判断进度状态用挣值：<strong>SV=EV−PV，SPI=EV/PV</strong>（负/小于1为落后）；工具还包括迭代燃尽图、绩效审查、关键路径变动分析。输出：工作绩效信息、<strong>进度预测</strong>、变更请求。</p></div>
+  </section>
+
+  <section class="sec" id="sec-recite">
+    <div class="sec-head"><span class="emoji">🎯</span><h2>考点速记 · 冲刺背诵版</h2></div>
+    <div class="article"><h3>冲刺速记表</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>考点</th><th>关键结论</th></tr></thead><tbody><tr><td>进度6过程</td><td>规划→定义活动→排序→估算历时→制定计划→控制</td></tr><tr><td>里程碑</td><td>持续时间为0的重要事件</td></tr><tr><td>最常用逻辑关系</td><td>FS（完成到开始）</td></tr><tr><td>依赖三分类</td><td>强制性、选择性、外部</td></tr><tr><td>三点估算β分布</td><td>(O+4M+P)/6</td></tr><tr><td>总时差</td><td>LS−ES 或 LF−EF</td></tr><tr><td>自由时差</td><td>min(紧后ES)−本EF，且FF≤TF</td></tr><tr><td>关键路径</td><td>最长路径、决定总工期、总时差为0、可有多条</td></tr><tr><td>资源平衡vs平滑</td><td>平衡可改工期；平滑不改工期</td></tr><tr><td>赶工vs快速跟进</td><td>赶工加成本；快速跟进加风险</td></tr><tr><td>进度基准输出</td><td>制定进度计划过程</td></tr></tbody></table></div>
+<div class="mn-card"><div class="mn-t">🧠 记忆口诀 · 进度六过程</div><div class="mn-b">“规排序估制控”</div><div class="mn-d">规划进度管理、定义活动、排列顺序、估算历时、制定计划、控制进度。</div></div>
+<div class="co co-exam"><div class="co-t">📝 案例计算套路</div><p>给网络图：①正推ES/EF、逆推LS/LF；②算各活动TF，TF=0连成关键路径；③给出计划工期比较（TF为负需压缩）；④压缩方案比较“赶工成本/并行风险”。数字别慌，按模板一步步算。</p></div></div>
+  </section>
+
+  <section class="sec" id="sec-quiz">
+    <div class="sec-head"><span class="emoji">✍️</span><h2>章节自测</h2><span class="tag">点击选项即时判分并显示解析</span></div>
+    <div id="quizHost"></div>
+  </section>
+
+  <div class="pager">
+    <a class="prev" href="ch09.html"><div class="dir">上一章</div><div class="pt">第9章 · 项目范围管理</div></a>
+    <a class="next" href="ch11.html"><div class="dir">下一章</div><div class="pt">第11章 · 项目成本管理</div></a>
+  </div>
+</div>
+<script>window.CH_NUM=10;window.PAGE_ID="ch10";window.QUIZ_DATA=[{"q": "某活动的乐观工期为6天，最可能工期为9天，悲观工期为18天，按β分布三点估算，期望工期为（　）天。", "options": ["9", "10", "11", "12"], "a": 1, "ex": "β分布期望工期=(O+4M+P)/6=(6+4×9+18)/6=60/6=10天。"}, {"q": "关于关键路径的说法，正确的是（　）。", "options": ["关键路径是网络图中最短的路径", "关键路径上的活动总时差为零或负值", "一个项目只能有一条关键路径", "关键路径上的活动可以随意延误"], "a": 1, "ex": "关键路径是最长路径，决定总工期，其上活动总时差为零或负；关键路径可以有多条，且可能随进展发生转移。"}, {"q": "为赶上工期，项目经理将原本先后进行的“开发”与“测试”改为部分并行开展。这种进度压缩技术称为（　）。", "options": ["赶工", "快速跟进", "资源平衡", "资源平滑"], "a": 1, "ex": "快速跟进=顺序活动并行开展，通常增加风险与返工可能；赶工=增加资源压缩工期，通常增加成本。"}];</script>
+
+  <div class="wrap"><div class="footer">
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="f-t">© 2026 软考高项学习平台 · 版权与使用声明</div>
+        <p>本站全部原创内容（通俗精讲、思维导图、考点速记、记忆口诀、自测题与页面设计）受《中华人民共和国著作权法》保护。<b>未经站长书面许可，任何单位或个人不得以任何形式复制、转载、镜像、采集、摘编本站内容，或将其用于任何商业用途。</b>未经授权使用本站原创内容的，站长有权依法要求删除并追究相应责任。如需授权转载、引用或合作，请事先与站长联系并取得书面许可。</p>
+      </div>
+      <div class="f-col">
+        <div class="f-t">数据来源与免责声明</div>
+        <p>本站知识体系依据官方教程《信息系统项目管理师教程（第4版）》（清华大学出版社）以<b>自己的语言整理编写</b>，不含教材原文段落，也不提供教材文件下载；思维导图基于官方目录与知识点原创绘制。本站为个人学习笔记，<b>非官方站点</b>，与考试组织机构无关联；考试政策类信息（时间/报名/合格标准）以<b>中国计算机技术职业资格网 www.ruankao.org.cn</b> 官方发布为准。如本站内容涉及您的合法权利且有标注不当之处，请联系站长，核实后将立即处理。</p>
+      </div>
+    </div>
+    <div class="f-note">学习进度仅保存在本机浏览器（localStorage）中，清除浏览器数据会重置进度。</div>
+  </div></div>
+</div>
+</div>
+<script>window.ROOT_REL="..";</script>
+<script src="../assets/app.js?v=21"></script>
+<script>window.markmap={autoLoader:{manual:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18" crossorigin="anonymous"></script>
+
+</body>
+</html>
