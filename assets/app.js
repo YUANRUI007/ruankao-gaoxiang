@@ -1,8 +1,8 @@
 /* ============================================================
-   软考高项学习平台 · 前端交互 v2.1
-   主题 / 导航 / 搜索 / 学习进度(donut+继续学习) / 自测 / 思维导图控制
-   所有导航数据中的路径均为"站点根相对路径"（如 chapters/ch01.html），
-   通过 window.ROOT_REL 前缀解析，保证从任何目录的页面打开都正确。
+   软考高项学习平台 · 前端交互 v3「高级质感」
+   主题 / 导航 / 搜索 / 进度环 / 自测 / 导图控制
+   v3 新增：滚动进度条 · 返回顶部 · 光斑追踪卡片 · Hero 3D 倾斜 + 视差
+   所有导航数据均为"站点根相对路径"，经 window.ROOT_REL 解析前缀。
    ============================================================ */
 (function () {
   "use strict";
@@ -16,16 +16,9 @@
   /* ---------- 工具 ---------- */
   var ROOT = (typeof window.ROOT_REL === "string") ? window.ROOT_REL : "";
   if (ROOT === "/") ROOT = "";
-  if (ROOT.length && ROOT.charAt(ROOT.length - 1) === "/") {
-    ROOT = ROOT.slice(0, -1); /* "./" -> ""，"/" -> "" */
-  }
+  if (ROOT.length && ROOT.charAt(ROOT.length - 1) === "/") ROOT = ROOT.slice(0, -1);
 
-  /* 把站点根相对路径解析为当前页面可用的相对路径 */
-  function u(href) {
-    if (!href) return href;
-    return (ROOT ? ROOT + "/" : "") + href;
-  }
-
+  function u(href) { return href ? (ROOT ? ROOT + "/" : "") + href : href; }
   function $(s, el) { return (el || document).querySelector(s); }
   function $all(s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); }
   function esc(s) {
@@ -41,6 +34,18 @@
       }
       localStorage.setItem(key, JSON.stringify(val));
     } catch (e) { return null; }
+  }
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* rAF 节流 */
+  function rafThrottle(fn) {
+    if (!window.requestAnimationFrame) return fn;
+    var ticking = false;
+    return function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; fn(); });
+    };
   }
 
   /* ---------- 主题 ---------- */
@@ -61,6 +66,66 @@
       sync();
     });
     sync();
+  }
+
+  /* ---------- 滚动进度条 + 返回顶部 + Hero 视差 ---------- */
+  function initScrollUX() {
+    var bar = $("#scrollBar"), toTop = $("#toTop");
+    var hero = $(".hero");
+
+    var update = rafThrottle(function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var y = window.scrollY || doc.scrollTop;
+      if (bar) bar.style.transform = "scaleX(" + (max > 0 ? Math.min(y / max, 1) : 0) + ")";
+      if (toTop) toTop.classList.toggle("show", y > 560);
+      if (hero && !reduceMotion && y < hero.offsetHeight) {
+        var k = Math.min(y / Math.max(hero.offsetHeight, 1), 1);
+        var left = $(".hero-left", hero), panel = $(".hero-panel", hero);
+        if (left) left.style.transform = "translateY(" + (k * 34) + "px)";
+        if (panel) panel.style.transform = "translateY(" + (k * 14) + "px)";
+      }
+    });
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+
+    if (toTop) {
+      toTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+      });
+    }
+  }
+
+  /* ---------- 光斑追踪卡片 ---------- */
+  function initSpotlight() {
+    if (!window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    var targets = $all(".ch-card, .feat, .stage-card, .meta-card, .quiz-item");
+    targets.forEach(function (el) { el.classList.add("spot"); });
+    document.addEventListener("pointermove", function (e) {
+      var el = e.target && e.target.closest ? e.target.closest(".spot") : null;
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      el.style.setProperty("--my", (e.clientY - r.top) + "px");
+    }, { passive: true });
+  }
+
+  /* ---------- Hero 面板 3D 倾斜 ---------- */
+  function initTilt() {
+    if (reduceMotion || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    var panel = $(".hero-panel");
+    if (!panel) return;
+    var MAX = 5;
+    panel.addEventListener("pointermove", function (e) {
+      var r = panel.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - .5;
+      var py = (e.clientY - r.top) / r.height - .5;
+      panel.style.transform = "perspective(900px) rotateX(" + (-py * MAX).toFixed(2) +
+        "deg) rotateY(" + (px * MAX).toFixed(2) + "deg) translateZ(0)";
+    });
+    panel.addEventListener("pointerleave", function () {
+      panel.style.transform = "";
+    });
   }
 
   /* ---------- 学习进度 ---------- */
@@ -101,12 +166,9 @@
       animateNum(function (v) {
         fg.style.strokeDashoffset = C * (1 - v / 100);
         if (dc) dc.textContent = Math.round(v) + "%";
-      }, pct, 950);
+      }, pct, 1100);
     }
     if (dt) dt.innerHTML = "<b>" + cnt + "</b> / " + total + " 章已完成";
-    var hp = $("#homePct"), hpt = $("#homePctTxt");
-    if (hp) hp.textContent = pct + "%";
-    if (hpt) hpt.textContent = "已掌握 " + cnt + " / " + total + " 章";
   }
 
   function animateNum(fn, target, dur) {
@@ -137,7 +199,7 @@
     renderProgress();
   }
 
-  /* ---------- 继续学习（记住最后浏览章节） ---------- */
+  /* ---------- 继续学习 ---------- */
   function initContinueBtn() {
     var btn = $("#continueBtn");
     if (!btn) return;
@@ -146,7 +208,7 @@
       btn.href = u(last.href);
       btn.innerHTML = "<span class=\"lbl\">▶ 继续学习：第" + last.n + "章 · " + esc(last.t || "") + "</span>";
     } else {
-      btn.innerHTML = "▶ <span class=\"lbl\">从第6章 项目管理概论开始</span>";
+      btn.innerHTML = "<span class=\"lbl\">▶ 从第6章 项目管理概论开始</span>";
     }
   }
 
@@ -154,7 +216,7 @@
   function initReveal() {
     var els = $all(".reveal");
     if (!els.length) return;
-    if (!("IntersectionObserver" in window)) {
+    if (!("IntersectionObserver" in window) || reduceMotion) {
       els.forEach(function (el) { el.classList.add("in"); });
       return;
     }
@@ -165,7 +227,7 @@
           io.unobserve(en.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
+    }, { threshold: 0.08, rootMargin: "0px 0px -26px 0px" });
     els.forEach(function (el) { io.observe(el); });
   }
 
@@ -292,7 +354,7 @@
     });
   }
 
-  /* ---------- 思维导图控制（滚轮模拟缩放，不依赖内部 API） ---------- */
+  /* ---------- 思维导图控制 ---------- */
   function initMap() {
     var box = $(".map-box");
     if (!box) return;
@@ -328,7 +390,7 @@
     }, 4000);
   }
 
-  /* ---------- 章节访问记录（供首页"继续学习"） ---------- */
+  /* ---------- 章节访问记录 ---------- */
   function trackLastChapter() {
     if (!window.CH_NUM) return;
     var link = null;
@@ -356,5 +418,8 @@
     renderProgress();
     initReveal();
     initMap();
+    initScrollUX();
+    initSpotlight();
+    initTilt();
   });
 })();
