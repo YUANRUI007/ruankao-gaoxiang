@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>软考高项学习平台 · 信息系统项目管理师（零基础）</title>
+<meta name="description" content="信息系统项目管理师（软考高级）零基础学习平台：24章思维导图、通俗精讲、考点速记与自测，内容依据官方教程第4版整理。">
+<meta name="author" content="软考高项学习平台">
+<meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>项</text></svg>">
+<link rel="stylesheet" href="../assets/style.css?v=21">
+<script src="../assets/nav-data.js"></script>
+<script src="../assets/search-data.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="logo">项</div>
+    <div><div class="bt">软考高项学习平台</div><div class="bs">信息系统项目管理师 · 第4版教程</div></div>
+  </div>
+  <div class="side-search">
+    <span class="ic">🔍</span>
+    <input id="searchInput" type="text" placeholder="搜索章节 / 考点…">
+    <div class="search-pop" id="searchPop"></div>
+  </div>
+  <nav id="navHost"></nav>
+</aside>
+<div id="scrim"></div>
+<div class="main">
+  <div class="topbar"><div class="in">
+    <button class="icon-btn" id="menuBtn" title="目录">☰</button>
+    <div class="crumb"><a href="../index.html">首页</a> / <a href="../index.html#part1">信息技术</a> / <b>第5章 信息系统工程</b></div>
+    <div class="sp"></div>
+    <div class="mini-progress"><div class="bar"><i id="miniBar"></i></div><span id="miniBarTxt"></span></div>
+    <button class="icon-btn" id="themeBtn" title="切换深浅色">🌙</button>
+  </div></div>
+  
+<div class="wrap">
+  <div class="ch-hero">
+    <div class="kicker">
+      <span class="badge" style="background:#0891b21a;color:#0891b2;border-color:#0891b255">第一部分 · 信息技术基础</span>
+      <span class="badge gray">第 5 章 · 官方教程第4版</span>
+    </div>
+    <h1>信息系统工程</h1>
+    <div class="lead">工程师的“四大工种”：软件工程（需求/设计/UML/测试）、数据工程（集成/仓库/治理）、系统集成、安全工程（ISSE与ISSE-CMM）。</div>
+    
+    <div class="ch-meta">
+      <div class="meta-card"><div class="k">考情 · 分值与题型</div><div class="v">综合知识约 4~6 分，案例分析偶考（UML图、测试分类）</div></div>
+      <div class="meta-card"><div class="k">难度</div><div class="v"><span class="stars">★★★★<span class="off">★</span></span></div></div>
+      <div class="meta-card"><div class="k">考试重要度</div><div class="v"><span class="stars">★★★★<span class="off">★</span></span></div></div>
+      <div class="meta-card"><div class="k">建议学习时长</div><div class="v">约 6 小时</div></div>
+    </div>
+    <div class="study-bar">
+      <button class="btn-sm btn-mark" id="markBtn">○ 标记本章已掌握</button>
+      <div class="jump">
+        <a href="#sec-map">🗺 思维导图</a><a href="#sec-body">📖 知识精讲</a>
+        <a href="#sec-recite">🎯 考点速记</a><a href="#sec-quiz">✍ 自测</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" id="sec-intro">
+    <div class="sec-head"><span class="emoji">🧭</span><h2>零基础导航 · 先读懂这一章在讲什么</h2></div>
+    <div class="article"><div class="co co-story"><div class="co-t">🍿 盖房子的人和他们的图纸</div><p>信息系统就像一栋大楼：<strong>软件工程</strong>是施工规范（怎么画图纸、怎么验收）；<strong>数据工程</strong>是水电管网（数据怎么流动、怎么存）；<strong>系统集成</strong>是总包施工（把各家的设备装到一起还能联动）；<strong>安全工程</strong>是安保系统设计（门禁、监控、防火）。这一章名词多，但都在回答“系统怎么被规范地造出来”。</p></div>
+<div class="co co-tip"><div class="co-t">💡 学习策略</div><p>本章性价比极高：UML图的用途、黑盒白盒测试的对应阶段、软件过程模型的适用场景，是选择题反复出现的“老演员”。先用导图建立分类框架，再逐个击破。</p></div></div>
+  </section>
+
+  <section class="sec" id="sec-map">
+    <div class="sec-head"><span class="emoji">🗺️</span><h2>本章思维导图</h2><span class="tag">点击节点可展开/折叠 · 滚轮缩放 · 拖拽平移</span></div>
+    <div class="map-box">
+      <div class="map-toolbar">
+        <span class="hint">基于官方教程第4版目录与知识点绘制</span>
+        <a data-zoomin title="放大">➕ 放大</a><a data-zoomout title="缩小">➖ 缩小</a><a data-fit>⤢ 适应窗口</a>
+      </div>
+      <div class="markmap map-svg"><script type="text/template">
+---
+markmap:
+  maxWidth: 300
+  initialExpandLevel: 3
+---
+# 第5章 信息系统工程
+## 5.1 软件工程
+### 软件工程定义
+#### 用工程化原则和方法解决软件问题
+### 需求分析
+#### 需求层次：业务需求、用户需求、系统需求（功能+非功能）
+#### 结构化分析（SA）：DFD数据流图、数据字典、E-R图
+#### 面向对象分析（OOA）：找对象、类、关系
+### 软件设计
+#### 概要设计（架构、模块划分）
+#### 详细设计（模块内部算法与接口）
+#### 面向对象设计（OOD）、设计模式
+### UML图
+#### 静态图：类图、对象图、构件图、部署图、包图
+#### 动态图：用例图、顺序图、通信图、状态图、活动图
+### 软件测试
+#### 静态测试 vs 动态测试
+#### 白盒（结构）测试：单元测试，逻辑覆盖
+#### 黑盒（功能）测试：集成/确认/系统测试
+#### 测试阶段：单元→集成→确认→系统→验收
+### 软件过程模型
+#### 瀑布模型、迭代、增量、螺旋、原型法、敏捷、DevOps
+### 软件维护
+#### 纠错性、适应性、完善性、预防性
+## 5.2 数据工程
+### 数据集成
+#### 异构数据库→全局模式；数据仓库是关键
+### 数据仓库
+#### 面向主题、集成、相对稳定、反映历史
+### 数据治理/数据标准化
+#### 数据清理：准确性、完整性、一致性、唯一性
+### 数据备份与恢复
+## 5.3 系统集成
+#### 网络、主机、应用、数据等多层面集成
+#### 企业集成：业务流程集成、应用集成、数据集成、界面集成? 方法集成
+## 5.4 安全工程
+### 信息安全系统工程（ISSE）
+#### 建造信息安全系统，与业务应用工程同步
+#### 内容：风险评估→策略制定→需求确定→总体设计→详细设计→设备选型→招投标→密钥密码机制→资源界定与授权→施工防泄密→测试运营维护
+### ISSE-CMM
+#### 信息安全系统工程能力成熟度模型
+#### 建立在统计过程控制理论基础上
+      </script></div>
+      <details class="map-fallback" style="display:none">
+        <summary>📖 文字版大纲（导图加载失败时查看，内容一致）</summary>
+        <pre>■ 第5章 信息系统工程
+├─ 5.1 软件工程
+│   ├─ 软件工程定义
+│   │   · 用工程化原则和方法解决软件问题
+│   ├─ 需求分析
+│   │   · 需求层次：业务需求、用户需求、系统需求（功能+非功能）
+│   │   · 结构化分析（SA）：DFD数据流图、数据字典、E-R图
+│   │   · 面向对象分析（OOA）：找对象、类、关系
+│   ├─ 软件设计
+│   │   · 概要设计（架构、模块划分）
+│   │   · 详细设计（模块内部算法与接口）
+│   │   · 面向对象设计（OOD）、设计模式
+│   ├─ UML图
+│   │   · 静态图：类图、对象图、构件图、部署图、包图
+│   │   · 动态图：用例图、顺序图、通信图、状态图、活动图
+│   ├─ 软件测试
+│   │   · 静态测试 vs 动态测试
+│   │   · 白盒（结构）测试：单元测试，逻辑覆盖
+│   │   · 黑盒（功能）测试：集成/确认/系统测试
+│   │   · 测试阶段：单元→集成→确认→系统→验收
+│   ├─ 软件过程模型
+│   │   · 瀑布模型、迭代、增量、螺旋、原型法、敏捷、DevOps
+│   ├─ 软件维护
+│   │   · 纠错性、适应性、完善性、预防性
+├─ 5.2 数据工程
+│   ├─ 数据集成
+│   │   · 异构数据库→全局模式；数据仓库是关键
+│   ├─ 数据仓库
+│   │   · 面向主题、集成、相对稳定、反映历史
+│   ├─ 数据治理/数据标准化
+│   │   · 数据清理：准确性、完整性、一致性、唯一性
+│   ├─ 数据备份与恢复
+├─ 5.3 系统集成
+│   │   · 网络、主机、应用、数据等多层面集成
+│   │   · 企业集成：业务流程集成、应用集成、数据集成、界面集成? 方法集成
+├─ 5.4 安全工程
+│   ├─ 信息安全系统工程（ISSE）
+│   │   · 建造信息安全系统，与业务应用工程同步
+│   │   · 内容：风险评估→策略制定→需求确定→总体设计→详细设计→设备选型→招投标→密钥密码机制→资源界定与授权→施工防泄密→测试运营维护
+│   ├─ ISSE-CMM
+│   │   · 信息安全系统工程能力成熟度模型
+│   │   · 建立在统计过程控制理论基础上</pre>
+      </details>
+    </div>
+  </section>
+
+  <section class="sec" id="sec-body">
+    <div class="sec-head"><span class="emoji">📖</span><h2>知识精讲 · 通俗版</h2></div>
+    <div class="article"><h3>5.1 软件工程</h3>
+<p><strong>软件工程</strong>：应用计算机科学、数学及管理科学等原理，以<strong>工程化的原则和方法</strong>解决软件问题的工程，目的是提高软件生产率、提高软件质量、降低软件成本。</p>
+<h4>需求分析</h4>
+<p>需求分三个层次：<strong>业务需求</strong>（组织为什么做）、<strong>用户需求</strong>（用户要干什么）、<strong>系统需求</strong>（系统必须做什么，含<strong>功能需求</strong>与<strong>非功能需求</strong>——性能、安全、可靠性等）。</p>
+<p>两大分析方法（必考对比）：</p>
+<ul><li><strong>结构化分析（SA）</strong>：面向数据流。核心工具：<strong>数据流图（DFD）</strong>、数据字典、E-R图、状态转换图；</li><li><strong>面向对象分析（OOA）</strong>：运用面向对象方法对问题域进行分析，认识事物及其关系，产出类、对象与关系模型，再经<strong>面向对象设计（OOD）</strong>落地。</li></ul>
+<h4>UML图（案例+选择双料考点）</h4>
+<p>统一建模语言UML分为<strong>静态图（结构图）</strong>与<strong>动态图（行为图）</strong>：</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>类别</th><th>图</th><th>用途一句话</th></tr></thead><tbody><tr><td>静态</td><td><strong>类图</strong></td><td>描述类及其关系（最常用）</td></tr><tr><td>静态</td><td>对象图</td><td>类图某一时刻的实例快照</td></tr><tr><td>静态</td><td><strong>构件图</strong></td><td>软件部件的组织与依赖</td></tr><tr><td>静态</td><td><strong>部署图</strong></td><td>运行时节点与构件的物理分布</td></tr><tr><td>动态</td><td><strong>用例图</strong></td><td>用户与系统功能的交互（需求利器）</td></tr><tr><td>动态</td><td><strong>顺序图</strong></td><td>按时间顺序的消息交互</td></tr><tr><td>动态</td><td>通信图（协作图）</td><td>对象间消息结构</td></tr><tr><td>动态</td><td><strong>状态图</strong></td><td>对象状态随事件的变迁</td></tr><tr><td>动态</td><td><strong>活动图</strong></td><td>业务/工作流程建模</td></tr></tbody></table></div>
+<div class="co co-tip"><div class="co-t">💡 快速判别</div><p>看到“时间顺序”选顺序图；“工作流程/业务流程”选活动图；“物理硬件布局”选部署图；“用户能做什么”选用例图。</p></div>
+<h4>软件测试（高频）</h4>
+<ul><li><strong>静态测试</strong>：不运行程序（代码走查、评审）；<strong>动态测试</strong>：运行程序验证。</li><li><strong>白盒测试（结构测试）</strong>：把程序看作透明的盒子，按<strong>内部逻辑结构</strong>设计用例，主要用于<strong>单元测试</strong>（逻辑覆盖：语句、判定、条件覆盖等）；</li><li><strong>黑盒测试（功能测试）</strong>：把程序看作不透明黑盒，只检查功能是否符合<strong>SRS（软件需求规格说明书）</strong>要求，主要用于<strong>集成测试、确认测试和系统测试</strong>（等价类划分、边界值分析等）。</li><li>测试阶段顺序：<strong>单元测试 → 集成测试 → 确认测试 → 系统测试 → 验收测试</strong>。</li></ul>
+<div class="mn-card"><div class="mn-t">🧠 记忆口诀 · 测试五连</div><div class="mn-b">“单集确系验”</div><div class="mn-d">单元靠白盒，集成往后用黑盒；确认验“需求”，系统验“整体”，验收看“用户”。</div></div>
+<h4>软件过程模型</h4>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>模型</th><th>特点</th><th>适用</th></tr></thead><tbody><tr><td><strong>瀑布模型</strong></td><td>阶段顺序、文档驱动</td><td>需求明确稳定</td></tr><tr><td><strong>原型法</strong></td><td>快速造原型沟通确认</td><td>需求模糊</td></tr><tr><td><strong>迭代/增量</strong></td><td>分批交付逐步完善</td><td>可分解交付</td></tr><tr><td><strong>螺旋模型</strong> = 瀑布+迭代+<strong>风险分析</strong></td><td>大型复杂高风险项目</td></tr><tr><td><strong>敏捷</strong></td><td>小步快跑、拥抱变化、人与协作</td><td>需求多变</td></tr><tr><td><strong>DevOps</strong></td><td>开发运维一体、持续集成交付</td><td>互联网化持续交付</td></tr></tbody></table></div>
+<h4>软件维护四类型</h4>
+<p><strong>纠错性</strong>（修bug）、<strong>适应性</strong>（适应环境变化）、<strong>完善性</strong>（增强功能，占比最大）、<strong>预防性</strong>（预防未来故障）。</p>
+<h3>5.2 数据工程</h3>
+<ul><li><strong>数据集成</strong>：将异构分布式数据库的信息在逻辑上集成为一个<strong>全局概念模式</strong>，实现信息共享；<strong>数据仓库技术是数据集成的关键</strong>。</li><li><strong>数据清理</strong>：构建数据仓库与数据挖掘前，对数据源进行处理，使其具备<strong>准确性、完整性、一致性、唯一性、适时性、有效性</strong>。</li><li><strong>数据仓库</strong>：面向主题、集成、相对稳定（不可更新性）、反映历史变化的数据集合，支撑决策分析。</li></ul>
+<h3>5.3 系统集成</h3>
+<p>系统集成将网络、主机、存储、应用、数据等按需求组合成一个整体。企业应用集成的常见层次：<strong>界面集成（表示集成）、数据集成、应用集成（API）、业务流程集成（过程集成）</strong>，以及跨企业的方法集成。组织利用应用集成实现<strong>流程互联和数据交换</strong>，提高业务效率。</p>
+<h3>5.4 安全工程</h3>
+<p>业务应用系统、操作系统、数据库、网管系统各自解决安全问题都不够用，需要<strong>建立独立的信息安全系统</strong>——这就是<strong>信息安全系统工程（ISSE）</strong>：它是整个信息系统工程的一部分，<strong>最好与业务应用信息系统工程同步进行</strong>。</p>
+<p>教材列出的安全工程主线（理解“安全也要走全生命周期”）：<strong>信息安全风险评估 → 信息安全策略制定 → 信息安全需求确定 → 总体设计 → 详细设计 → 设备选型 → 工程招投标 → 密钥密码机制确定 → 资源界定和授权 → 施工防泄密 → 测试、运营、维护的安全管理</strong>。</p>
+<p><strong>ISSE-CMM（信息安全系统工程能力成熟度模型）</strong>：一种衡量信息安全系统工程实施能力的方法，面向工程过程，建立在<strong>统计过程控制理论</strong>基础上——通过持续的过程改进提升组织安全工程能力。</p></div>
+  </section>
+
+  <section class="sec" id="sec-recite">
+    <div class="sec-head"><span class="emoji">🎯</span><h2>考点速记 · 冲刺背诵版</h2></div>
+    <div class="article"><h3>冲刺速记表</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>考点</th><th>关键结论</th></tr></thead><tbody><tr><td>软件工程目的</td><td>提高生产率、提高质量、降低成本</td></tr><tr><td>需求三层次</td><td>业务需求→用户需求→系统需求（功能+非功能）</td></tr><tr><td>SA核心工具</td><td>数据流图DFD、数据字典、E-R图</td></tr><tr><td>UML静态图</td><td>类图、对象图、构件图、部署图、包图</td></tr><tr><td>UML动态图</td><td>用例图、顺序图、通信图、状态图、活动图</td></tr><tr><td>白盒测试</td><td>结构测试，用于单元测试，逻辑覆盖</td></tr><tr><td>黑盒测试</td><td>功能测试，用于集成/确认/系统测试</td></tr><tr><td>测试顺序</td><td>单元→集成→确认→系统→验收</td></tr><tr><td>螺旋模型特点</td><td>瀑布+迭代+风险分析</td></tr><tr><td>软件维护四类</td><td>纠错性、适应性、完善性（占比最大）、预防性</td></tr><tr><td>数据集成关键</td><td>数据仓库技术</td></tr><tr><td>ISSE定位</td><td>独立的信息安全系统，与业务工程同步建设</td></tr><tr><td>ISSE-CMM基础</td><td>统计过程控制理论</td></tr></tbody></table></div>
+<div class="mn-card"><div class="mn-t">🧠 记忆口诀 · 维护四兄弟</div><div class="mn-b">“错适完预”</div><div class="mn-d">修“错”改“适”增“完”防“预”——完善性维护占工作量比例最大，考频最高。</div></div>
+<div class="co co-warn"><div class="co-t">⚠️ 易错点</div><p>① 边界值分析、等价类划分属于<strong>黑盒</strong>测试设计方法；语句/判定/条件覆盖属于<strong>白盒</strong>。② 螺旋模型最独特之处是每圈都做<strong>风险分析</strong>。</p></div></div>
+  </section>
+
+  <section class="sec" id="sec-quiz">
+    <div class="sec-head"><span class="emoji">✍️</span><h2>章节自测</h2><span class="tag">点击选项即时判分并显示解析</span></div>
+    <div id="quizHost"></div>
+  </section>
+
+  <div class="pager">
+    <a class="prev" href="ch04.html"><div class="dir">上一章</div><div class="pt">第4章 · 信息系统管理</div></a>
+    <a class="next" href="ch06.html"><div class="dir">下一章</div><div class="pt">第6章 · 项目管理概论</div></a>
+  </div>
+</div>
+<script>window.CH_NUM=5;window.PAGE_ID="ch5";window.QUIZ_DATA=[{"q": "在UML中，描述“参与者与系统功能之间交互关系”、常用于需求获取的图是（　）。", "options": ["类图", "用例图", "部署图", "构件图"], "a": 1, "ex": "用例图描述参与者（Actor）与用例（系统功能）的交互，是需求分析利器。类图描述静态结构，部署图描述物理布局，构件图描述软件部件组织。"}, {"q": "将程序看作“透明的盒子”，完全清楚程序内部结构和处理算法，按照程序内部逻辑设计测试用例，这种方法主要用于（　）。", "options": ["系统测试", "确认测试", "单元测试", "验收测试"], "a": 2, "ex": "白盒测试（结构测试）主要用于单元测试；黑盒测试（功能测试）主要用于集成测试、确认测试和系统测试。"}, {"q": "软件维护中，工作量占比最大的维护类型通常是（　）。", "options": ["纠错性维护", "适应性维护", "完善性维护", "预防性维护"], "a": 2, "ex": "统计上完善性维护（按用户要求增加功能、增强性能）占维护工作量比例最大。"}, {"q": "关于螺旋模型，其区别于瀑布模型的显著特征是（　）。", "options": ["文档驱动", "每个迭代周期都进行风险分析", "不需要需求分析", "只适用于小型项目"], "a": 1, "ex": "螺旋模型在瀑布模型基础上引入迭代，并在每个周期都进行风险分析，适合大型复杂高风险项目。"}];</script>
+
+  <div class="wrap"><div class="footer">
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="f-t">© 2026 软考高项学习平台 · 版权与使用声明</div>
+        <p>本站全部原创内容（通俗精讲、思维导图、考点速记、记忆口诀、自测题与页面设计）受《中华人民共和国著作权法》保护。<b>未经站长书面许可，任何单位或个人不得以任何形式复制、转载、镜像、采集、摘编本站内容，或将其用于任何商业用途。</b>未经授权使用本站原创内容的，站长有权依法要求删除并追究相应责任。如需授权转载、引用或合作，请事先与站长联系并取得书面许可。</p>
+      </div>
+      <div class="f-col">
+        <div class="f-t">数据来源与免责声明</div>
+        <p>本站知识体系依据官方教程《信息系统项目管理师教程（第4版）》（清华大学出版社）以<b>自己的语言整理编写</b>，不含教材原文段落，也不提供教材文件下载；思维导图基于官方目录与知识点原创绘制。本站为个人学习笔记，<b>非官方站点</b>，与考试组织机构无关联；考试政策类信息（时间/报名/合格标准）以<b>中国计算机技术职业资格网 www.ruankao.org.cn</b> 官方发布为准。如本站内容涉及您的合法权利且有标注不当之处，请联系站长，核实后将立即处理。</p>
+      </div>
+    </div>
+    <div class="f-note">学习进度仅保存在本机浏览器（localStorage）中，清除浏览器数据会重置进度。</div>
+  </div></div>
+</div>
+</div>
+<script>window.ROOT_REL="..";</script>
+<script src="../assets/app.js?v=21"></script>
+<script>window.markmap={autoLoader:{manual:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18" crossorigin="anonymous"></script>
+
+</body>
+</html>
