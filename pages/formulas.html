@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>软考高项学习平台 · 信息系统项目管理师（零基础）</title>
+<meta name="description" content="信息系统项目管理师（软考高级）零基础学习平台：24章思维导图、通俗精讲、考点速记与自测，内容依据官方教程第4版整理。">
+<meta name="author" content="软考高项学习平台">
+<meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>项</text></svg>">
+<link rel="stylesheet" href="../assets/style.css?v=21">
+<script src="../assets/nav-data.js"></script>
+<script src="../assets/search-data.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="logo">项</div>
+    <div><div class="bt">软考高项学习平台</div><div class="bs">信息系统项目管理师 · 第4版教程</div></div>
+  </div>
+  <div class="side-search">
+    <span class="ic">🔍</span>
+    <input id="searchInput" type="text" placeholder="搜索章节 / 考点…">
+    <div class="search-pop" id="searchPop"></div>
+  </div>
+  <nav id="navHost"></nav>
+</aside>
+<div id="scrim"></div>
+<div class="main">
+  <div class="topbar"><div class="in">
+    <button class="icon-btn" id="menuBtn" title="目录">☰</button>
+    <div class="crumb"><a href="../index.html">首页</a> / <b>公式大全：考试必背计算</b></div>
+    <div class="sp"></div>
+    <div class="mini-progress"><div class="bar"><i id="miniBar"></i></div><span id="miniBarTxt"></span></div>
+    <button class="icon-btn" id="themeBtn" title="切换深浅色">🌙</button>
+  </div></div>
+  
+<div class="wrap">
+  <div class="ch-hero">
+    <div class="kicker"><span class="badge">📌 专题</span><span class="badge gray">应试工具</span></div>
+    <h1>公式大全：考试必背计算</h1>
+    <div class="lead">挣值管理全套、三点估算、沟通渠道、关键路径参数、经济评价指标——一页收齐所有计算公式。</div>
+  </div>
+  <div class="article" style="margin-top:26px"><h3>一、挣值管理（EVM）——案例必考</h3>
+<h4>三个基础值</h4>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>代号</th><th>名称</th><th>含义</th></tr></thead><tbody><tr><td><strong>PV</strong></td><td>计划价值</td><td>按计划到现在<strong>应完成</strong>工作的预算</td></tr><tr><td><strong>EV</strong></td><td>挣值</td><td><strong>实际已完成</strong>工作的预算价值（=BAC×完成%）</td></tr><tr><td><strong>AC</strong></td><td>实际成本</td><td>实际已完成工作的实际花费</td></tr></tbody></table></div>
+<h4>偏差与指数（EV是主角）</h4>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>公式</th><th>含义</th><th>判读</th></tr></thead><tbody><tr><td><strong>SV = EV − PV</strong></td><td>进度偏差</td><td>≥0超前，&lt;0落后</td></tr><tr><td><strong>SPI = EV ÷ PV</strong></td><td>进度绩效指数</td><td>≥1超前，&lt;1落后</td></tr><tr><td><strong>CV = EV − AC</strong></td><td>成本偏差</td><td>≥0节约，&lt;0超支</td></tr><tr><td><strong>CPI = EV ÷ AC</strong></td><td>成本绩效指数</td><td>≥1节约，&lt;1超支</td></tr></tbody></table></div>
+<h4>预测公式（BAC=完工预算=总计划值）</h4>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>公式</th><th>适用</th></tr></thead><tbody><tr><td><strong>EAC = AC + (BAC − EV)</strong></td><td>非典型偏差：剩余按原计划干</td></tr><tr><td><strong>EAC = BAC ÷ CPI</strong></td><td>典型偏差：成本效率持续到完工</td></tr><tr><td><strong>EAC = AC + (BAC−EV) ÷ (CPI×SPI)</strong></td><td>成本进度效率都持续影响</td></tr><tr><td><strong>ETC = EAC − AC</strong></td><td>完工尚需估算</td></tr><tr><td><strong>VAC = BAC − EAC</strong></td><td>完工偏差（负=超支）</td></tr><tr><td><strong>TCPI = (BAC−EV) ÷ (BAC−AC)</strong></td><td>完工尚需绩效指数（&gt;1=要更省）</td></tr></tbody></table></div>
+<div class="mn-card"><div class="mn-t">🧠 记忆口诀 · 挣值入门</div><div class="mn-b">“EV两边看：比PV是快慢，比AC是贵贱”</div><div class="mn-d">结果“大/正/≥1”都是好，反之都是坏。</div></div>
+<h3>二、进度计算</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>公式</th><th>说明</th></tr></thead><tbody><tr><td><strong>三点估算（β）= (O + 4M + P) ÷ 6</strong></td><td>O乐观、M最可能、P悲观（教材默认β分布）</td></tr><tr><td><strong>三点估算（三角）= (O + M + P) ÷ 3</strong></td><td>三角分布版本</td></tr><tr><td><strong>总时差 TF = LS − ES = LF − EF</strong></td><td>不影响总工期的浮动时间</td></tr><tr><td><strong>自由时差 FF = min(紧后ES) − EF</strong></td><td>不影响紧后最早开始的时间</td></tr><tr><td><strong>工期 = 关键路径长度</strong></td><td>网络图最长路径</td></tr></tbody></table></div>
+<h3>三、沟通管理</h3>
+<p>&gt; <strong>沟通渠道数 = n(n−1) ÷ 2</strong>（n为参与人数）</p>
+<h3>四、经济评价（第21章）</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>公式</th><th>说明</th></tr></thead><tbody><tr><td><strong>复利终值 F = P(1+i)ⁿ</strong></td><td>今天的P在n期后值多少</td></tr><tr><td><strong>净现值 NPV = Σ[(CI−CO)ₜ ÷ (1+ic)ᵗ]</strong></td><td><strong>≥0可行</strong>，越大越好</td></tr><tr><td><strong>IRR</strong></td><td>使NPV=0的折现率，<strong>≥基准收益率ic可行</strong></td></tr><tr><td><strong>静态回收期</strong></td><td>净收益（含折旧）抵偿全部投资的时间</td></tr></tbody></table></div>
+<h3>五、常考数字备忘</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>数字</th><th>内容</th></tr></thead><tbody><tr><td>49</td><td>十大领域过程总数</td></tr><tr><td>12 / 8 / 5 / 10</td><td>原则数 / 绩效域数 / 过程组数 / 知识领域数</td></tr><tr><td>0.00034%</td><td>六西格玛出错率上限</td></tr><tr><td>7</td><td>控制图七点规则；变更流程七步</td></tr><tr><td>45分</td><td>三科合格线</td></tr><tr><td>2500字 / 120分钟</td><td>论文要求</td></tr></tbody></table></div>
+<h3>六、计算题通用步骤</h3>
+<div class="co co-tip"><div class="co-t">💡 拿分套路</div><p>① <strong>写公式</strong>（有过程分）→ ② <strong>代数值</strong>（看清单位：万元/万月）→ ③ <strong>给结论</strong>（用管理语言：“进度落后、成本超支，建议……”）→ ④ 需要时<strong>画图</strong>（网络图标注ES/EF/LS/LF）。</p></div></div>
+</div>
+<script>window.PAGE_ID="formulas";</script>
+
+  <div class="wrap"><div class="footer">
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="f-t">© 2026 软考高项学习平台 · 版权与使用声明</div>
+        <p>本站全部原创内容（通俗精讲、思维导图、考点速记、记忆口诀、自测题与页面设计）受《中华人民共和国著作权法》保护。<b>未经站长书面许可，任何单位或个人不得以任何形式复制、转载、镜像、采集、摘编本站内容，或将其用于任何商业用途。</b>未经授权使用本站原创内容的，站长有权依法要求删除并追究相应责任。如需授权转载、引用或合作，请事先与站长联系并取得书面许可。</p>
+      </div>
+      <div class="f-col">
+        <div class="f-t">数据来源与免责声明</div>
+        <p>本站知识体系依据官方教程《信息系统项目管理师教程（第4版）》（清华大学出版社）以<b>自己的语言整理编写</b>，不含教材原文段落，也不提供教材文件下载；思维导图基于官方目录与知识点原创绘制。本站为个人学习笔记，<b>非官方站点</b>，与考试组织机构无关联；考试政策类信息（时间/报名/合格标准）以<b>中国计算机技术职业资格网 www.ruankao.org.cn</b> 官方发布为准。如本站内容涉及您的合法权利且有标注不当之处，请联系站长，核实后将立即处理。</p>
+      </div>
+    </div>
+    <div class="f-note">学习进度仅保存在本机浏览器（localStorage）中，清除浏览器数据会重置进度。</div>
+  </div></div>
+</div>
+</div>
+<script>window.ROOT_REL="..";</script>
+<script src="../assets/app.js?v=21"></script>
+
+
+</body>
+</html>
