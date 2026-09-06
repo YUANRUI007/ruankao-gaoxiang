@@ -129,6 +129,22 @@
     });
   }
 
+  /* ---------- 磁吸按钮 ---------- */
+  function initMagnetic() {
+    if (reduceMotion || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    $all(".btn, .btn-sm").forEach(function (btn) {
+      btn.addEventListener("pointermove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var dx = (e.clientX - r.left - r.width / 2) * 0.15;
+        var dy = (e.clientY - r.top - r.height / 2) * 0.3;
+        btn.style.transform = "translate(" + dx.toFixed(1) + "px," + (dy - 1).toFixed(1) + "px)";
+      });
+      btn.addEventListener("pointerleave", function () {
+        btn.style.transform = "";
+      });
+    });
+  }
+
   /* ---------- 全局光标光晕 ---------- */
   function initAura() {
     if (reduceMotion || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
@@ -665,6 +681,7 @@
     initScrollUX();
     initSpotlight();
     initTilt();
+    initMagnetic();
     initAura();
     initOdometer();
   });
