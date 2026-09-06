@@ -113,18 +113,51 @@
   /* ---------- Hero 面板 3D 倾斜 ---------- */
   function initTilt() {
     if (reduceMotion || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
-    var panel = $(".hero-panel");
-    if (!panel) return;
-    var MAX = 5;
-    panel.addEventListener("pointermove", function (e) {
-      var r = panel.getBoundingClientRect();
-      var px = (e.clientX - r.left) / r.width - .5;
-      var py = (e.clientY - r.top) / r.height - .5;
-      panel.style.transform = "perspective(900px) rotateX(" + (-py * MAX).toFixed(2) +
-        "deg) rotateY(" + (px * MAX).toFixed(2) + "deg) translateZ(0)";
+    $all(".hero-panel, .stage-card, .exam-card").forEach(function (panel) {
+      var MAX = panel.classList.contains("hero-panel") ? 5 : 3.5;
+      panel.style.transition = "transform .25s ease-out";
+      panel.addEventListener("pointermove", function (e) {
+        var r = panel.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;
+        var py = (e.clientY - r.top) / r.height - .5;
+        panel.style.transform = "perspective(900px) rotateX(" + (-py * MAX).toFixed(2) +
+          "deg) rotateY(" + (px * MAX).toFixed(2) + "deg) translateZ(0)";
+      });
+      panel.addEventListener("pointerleave", function () {
+        panel.style.transform = "";
+      });
     });
-    panel.addEventListener("pointerleave", function () {
-      panel.style.transform = "";
+  }
+
+  /* ---------- 全局光标光晕 ---------- */
+  function initAura() {
+    if (reduceMotion || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    var aura = $(".cursor-aura");
+    if (!aura) return;
+    var shown = false;
+    var move = rafThrottle(function (e) {
+      if (!shown) { aura.classList.add("on"); shown = true; }
+      aura.style.transform = "translate3d(" + (e.clientX - 260) + "px," + (e.clientY - 260) + "px,0)";
+    });
+    document.addEventListener("pointermove", move, { passive: true });
+    document.addEventListener("pointerleave", function () {
+      aura.classList.remove("on");
+      shown = false;
+    });
+  }
+
+  /* ---------- 数字跑表 ---------- */
+  function initOdometer() {
+    if (reduceMotion) return;
+    $all(".hero .stat .v").forEach(function (el) {
+      var node = el.firstChild;
+      if (!node || node.nodeType !== 3) return;
+      var m = (node.nodeValue || "").match(/^\d+/);
+      if (!m) return;
+      var target = parseInt(m[0], 10);
+      animateNum(function (v) {
+        node.nodeValue = String(Math.round(v));
+      }, target, 1300);
     });
   }
 
@@ -220,6 +253,12 @@
       els.forEach(function (el) { el.classList.add("in"); });
       return;
     }
+    els.forEach(function (el) {
+      if (/^(A|DIV)$/.test(el.tagName) &&
+          /\b(ch-card|feat|stage-card|exam-card|cta-band)\b/.test(el.className)) {
+        el.classList.add("r3d");
+      }
+    });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
@@ -363,6 +402,20 @@
           var elD = $("#qzDone"), elR = $("#qzRight");
           if (elD) elD.textContent = qzDone;
           if (elR) elR.textContent = qzRight;
+          if (qzDone === QUIZ_DATA.length && typeof window.confetti === "function") {
+            try {
+              if (qzRight === QUIZ_DATA.length) {
+                window.confetti({ particleCount: 160, spread: 78, origin: { y: .7 },
+                  colors: ["#6366f1", "#a855f7", "#fbbf24", "#22d3ee"] });
+                setTimeout(function () {
+                  window.confetti({ particleCount: 90, spread: 105, origin: { y: .6 },
+                    colors: ["#6366f1", "#a855f7", "#fbbf24", "#22d3ee"] });
+                }, 360);
+              } else {
+                window.confetti({ particleCount: 42, spread: 60, origin: { y: .78 }, scalar: .8 });
+              }
+            } catch (e) { /* noop */ }
+          }
         }
         opt.addEventListener("click", pick);
         opt.addEventListener("keydown", function (e) {
@@ -612,5 +665,7 @@
     initScrollUX();
     initSpotlight();
     initTilt();
+    initAura();
+    initOdometer();
   });
 })();
