@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>软考高项学习平台 · 信息系统项目管理师（零基础）</title>
+<meta name="description" content="信息系统项目管理师（软考高级）零基础学习平台：24章思维导图、通俗精讲、考点速记与自测，内容依据官方教程第4版整理。">
+<meta name="author" content="软考高项学习平台">
+<meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>项</text></svg>">
+<link rel="stylesheet" href=".//assets/style.css?v=21">
+<script src=".//assets/nav-data.js"></script>
+<script src=".//assets/search-data.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="logo">项</div>
+    <div><div class="bt">软考高项学习平台</div><div class="bs">信息系统项目管理师 · 第4版教程</div></div>
+  </div>
+  <div class="side-search">
+    <span class="ic">🔍</span>
+    <input id="searchInput" type="text" placeholder="搜索章节 / 考点…">
+    <div class="search-pop" id="searchPop"></div>
+  </div>
+  <nav id="navHost"></nav>
+</aside>
+<div id="scrim"></div>
+<div class="main">
+  <div class="topbar"><div class="in">
+    <button class="icon-btn" id="menuBtn" title="目录">☰</button>
+    <div class="crumb"><b>首页</b></div>
+    <div class="sp"></div>
+    <div class="mini-progress"><div class="bar"><i id="miniBar"></i></div><span id="miniBarTxt"></span></div>
+    <button class="icon-btn" id="themeBtn" title="切换深浅色">🌙</button>
+  </div></div>
+  
+<div class="hero">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="pill"><span class="pulse"></span>依据官方教程《信息系统项目管理师（第4版）》 · 752页全书梳理</div>
+      <h1>零基础，也能拿下<br><span class="hl">软考高级<br>信息系统项目管理师</span></h1>
+      <div class="sub">把 752 页官方教程读薄：24 章逐章配备<b>思维导图</b>、<b>通俗精讲</b>、<b>考点速记</b>与<b>章节自测</b>——用大白话和生活化比喻讲透项目管理，零基础也能一条路走到拿证。</div>
+      <div class="acts">
+        <a class="btn btn-primary" href="pages/plan.html">🚀 查看零基础学习路线</a>
+        <a class="btn btn-ghost" href="pages/overview.html">🗺 全书知识体系总览</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="v">24</div><div class="k">章节全覆盖 · 25张思维导图</div></div>
+        <div class="stat"><div class="v">3</div><div class="k">科目 · 一次考试全部通过</div></div>
+        <div class="stat"><div class="v">45<small style="font-size:14px;font-weight:600"> 分</small></div><div class="k">及格线（满分 75）</div></div>
+      </div>
+    </div>
+    <aside class="hero-panel">
+      <div class="hp-title">你的学习进度</div>
+      <div class="hp-donut">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <linearGradient id="donutGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fde047"/>
+              <stop offset="55%" stop-color="#fb923c"/>
+              <stop offset="100%" stop-color="#f472b6"/>
+            </linearGradient>
+          </defs>
+          <circle class="donut-bg" cx="60" cy="60" r="52"/>
+          <circle class="donut-fg" id="donutFg" cx="60" cy="60" r="52"/>
+        </svg>
+        <div class="donut-center"><b id="donutPct">0%</b><span>已掌握</span></div>
+      </div>
+      <div class="hp-row" id="donutTxt"><b>0</b> / 24 章已完成</div>
+      <a class="btn btn-light" id="continueBtn" href="chapters/ch06.html">▶ 从第6章 项目管理概论开始</a>
+      <div class="hp-tip">学习进度自动保存在本机浏览器</div>
+    </aside>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="blk">
+    <div class="feature-strip">
+      <div class="feat reveal" style="--fc:#6366f1"><div class="fi">🗺️</div><div><div class="ft">25 张交互思维导图</div><div class="fd">24章+全书总图，节点可展开折叠、缩放平移，先建框架再填细节。</div></div></div>
+      <div class="feat reveal d1" style="--fc:#0891b2"><div class="fi">📖</div><div><div class="ft">大白话通俗精讲</div><div class="fd">装修、开饭店式比喻讲透概念，每个过程都说清原理。</div></div></div>
+      <div class="feat reveal d2" style="--fc:#db2777"><div class="fi">🎯</div><div><div class="ft">考点速记 + 口诀</div><div class="fd">每章冲刺背诵表与全站口诀库，考前一周直接背。</div></div></div>
+      <div class="feat reveal d3" style="--fc:#059669"><div class="fi">✍️</div><div><div class="ft">章节自测即判分</div><div class="fd">点击选项即时判对错、给解析，学完一章当场验收。</div></div></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="blk-head"><h2>🧾 考试速览</h2><a class="more" href="pages/exam.html">完整考试介绍 →</a></div>
+    <div class="exam-grid">
+      <div class="exam-card reveal" style="--ec:#6366f1"><div class="ev">零门槛</div><div class="et">报考不限条件</div><div class="ed">不限学历、专业、工作年限，无需逐级报考，可直接报高级。</div></div>
+      <div class="exam-card reveal d1" style="--ec:#0891b2"><div class="ev">机考</div><div class="et">计算机化考试</div><div class="ed">三科连考、分批实施：综合知识+案例分析上午连考，论文下午考。</div></div>
+      <div class="exam-card reveal d2" style="--ec:#f59e0b"><div class="ev">一年一考</div><div class="et">仅上半年开考</div><div class="ed">通常5月下旬考试、3月报名，错过需再等一年，以官网通知为准。</div></div>
+      <div class="exam-card reveal d3" style="--ec:#059669"><div class="ev">以考代评</div><div class="et">直通高级职称</div><div class="ed">合格证书可作为评聘高级工程师职称依据（各地政策不同）。</div></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="blk-head"><h2>🧭 零基础三步走</h2><a class="more" href="pages/plan.html">查看详细路线 →</a></div>
+    <div class="stage-cards">
+      <a class="stage-card reveal" href="pages/plan.html" style="--sc:#6366f1">
+        <div class="stage-no">01</div>
+        <div><div class="stage-t">打地基 · 项目管理主干</div>
+        <div class="stage-d">第6章建立世界观，再逐章攻克十大知识领域（第8~17章），配合思维导图与章节自测。</div>
+        <span class="stage-w">约 4 周 · 每天 1.5~2 小时</span></div>
+      </a>
+      <a class="stage-card reveal d1" href="pages/plan.html" style="--sc:#f59e0b">
+        <div class="stage-no">02</div>
+        <div><div class="stage-t">补外围 · 选择题粮仓</div>
+        <div class="stage-d">第1~5章信息技术 + 第18~24章新趋势与通用知识，表格+口诀高效记忆。</div>
+        <span class="stage-w">约 3 周 · 自测正确率 ≥70%</span></div>
+      </a>
+      <a class="stage-card reveal d2" href="pages/plan.html" style="--sc:#db2777">
+        <div class="stage-no">03</div>
+        <div><div class="stage-t">冲三科 · 真题实战</div>
+        <div class="stage-d">综合刷真题、案例练挣值与关键路径计算、论文按十大领域逐个准备模板并计时打字。</div>
+        <span class="stage-w">约 4 周 · 三科齐头并进</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="blk-head"><h2>📚 全部章节</h2><span class="more" style="font-size:13px;color:var(--text-3);font-weight:500">共 24 章 · 按学习优先级分五部分</span></div>
+    <div class="part-band" id="part1"><span class="pb" style="--pc:#0891b2;background:#0891b2">第一部分 · 信息技术基础</span><span class="pd">第1-5章 · 软考的“文科背诵区”，也是综合知识选择题的大粮仓</span></div>
+<div class="chapters-grid"><a class="ch-card reveal d1" href="chapters/ch01.html" style="--pc:#0891b2">
+              <span class="done" data-done-ch="1" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第1章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">信息化发展</div>
+              <div class="desc">国家信息化战略的“政策地图”：信息与信息化的基本概念、新基建、两化融合与智能制造、数字中国、数字化转型与元宇宙。</div>
+              <div class="meta"><span class="m">⏱ 约4小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch02.html" style="--pc:#0891b2">
+              <span class="done" data-done-ch="2" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第2章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">信息技术发展</div>
+              <div class="desc">IT技术“名词大全”：软硬件、网络与OSI七层、存储与数据库、信息安全加密，以及物联网/云计算/大数据/区块链/AI等新一代信息技术。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d3" href="chapters/ch03.html" style="--pc:#0891b2">
+              <span class="done" data-done-ch="3" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第3章</span><span class="stars" title="考试重要度"><span class="stars">★★★<span class="off">★★</span></span></span></div>
+              <div class="t">信息系统治理</div>
+              <div class="desc">组织层面的“管IT”：IT治理体系（谁治理/治理什么/怎么治理/效果如何）与IT审计（风险、方法、流程、底稿）。</div>
+              <div class="meta"><span class="m">⏱ 约3小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d1" href="chapters/ch04.html" style="--pc:#0891b2">
+              <span class="done" data-done-ch="4" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第4章</span><span class="stars" title="考试重要度"><span class="stars">★★★<span class="off">★★</span></span></span></div>
+              <div class="t">信息系统管理</div>
+              <div class="desc">组织“日常操盘IT”的方法与要点：管理模型、管理要点聚焦数据管理、运维管理和信息安全管理。</div>
+              <div class="meta"><span class="m">⏱ 约3小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch05.html" style="--pc:#0891b2">
+              <span class="done" data-done-ch="5" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第5章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">信息系统工程</div>
+              <div class="desc">工程师的“四大工种”：软件工程（需求/设计/UML/测试）、数据工程（集成/仓库/治理）、系统集成、安全工程（ISSE与ISSE-CMM）。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a></div><div class="part-band" id="part2"><span class="pb" style="--pc:#4f46e5;background:#4f46e5">第二部分 · 项目管理基础</span><span class="pd">第6-7章 · 理解项目管理的世界观：原则、绩效域、生命周期与立项方法</span></div>
+<div class="chapters-grid"><a class="ch-card reveal d1" href="chapters/ch06.html" style="--pc:#4f46e5">
+              <span class="done" data-done-ch="6" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第6章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目管理概论</div>
+              <div class="desc">全书“世界观”：项目基本要素（项目/运营/项目集/项目组合）、项目经理角色、价值驱动的项目管理知识体系（12项原则、8大绩效域、价值交付系统）。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch07.html" style="--pc:#4f46e5">
+              <span class="done" data-done-ch="7" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第7章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">项目立项管理</div>
+              <div class="desc">项目“出生证明”怎么办：项目建议与立项申请→初步可研→详细可研→评估与决策，五大可研内容是选择题高发区。</div>
+              <div class="meta"><span class="m">⏱ 约3小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a></div><div class="part-band" id="part3"><span class="pb" style="--pc:#db2777;background:#db2777">第三部分 · 十大知识领域</span><span class="pd">第8-17章 · 全书心脏，综合知识+案例分析+论文三科主战场</span></div>
+<div class="chapters-grid"><a class="ch-card reveal d1" href="chapters/ch08.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="8" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第8章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目整合管理</div>
+              <div class="desc">项目经理的“总指挥”职能：7个过程把其余九大领域拧成一股绳，核心抓手是章程、计划、变更控制与经验教训。</div>
+              <div class="meta"><span class="m">⏱ 约8小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch09.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="9" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第9章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目范围管理</div>
+              <div class="desc">“做且只做该做的事”：需求收集、范围定义、WBS分解、范围确认验收与范围控制，防止镀金与蔓延。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d3" href="chapters/ch10.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="10" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第10章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目进度管理</div>
+              <div class="desc">“什么时候干完”：活动定义与排序、工期估算（三点估算）、进度计划编制（关键路径法）与进度压缩控制。</div>
+              <div class="meta"><span class="m">⏱ 约8小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d1" href="chapters/ch11.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="11" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第11章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目成本管理</div>
+              <div class="desc">“花多少钱、花得值不值”：成本估算、预算制定（应急储备与管理储备）与控制成本（挣值分析全套指标）。</div>
+              <div class="meta"><span class="m">⏱ 约7小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch12.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="12" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第12章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">项目质量管理</div>
+              <div class="desc">“满足要求+适合使用”：规划质量（质量成本）、管理质量（七大工具与审计）、控制质量（核实可交付成果）三过程。</div>
+              <div class="meta"><span class="m">⏱ 约5小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d3" href="chapters/ch13.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="13" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第13章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">项目资源管理</div>
+              <div class="desc">“人和物都要管好”：资源规划、估算获取，重点在团队——塔克曼阶梯、激励理论、冲突管理五大方法。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d1" href="chapters/ch14.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="14" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第14章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">项目沟通管理</div>
+              <div class="desc">“信息传到位”：沟通规划（渠道计算n(n−1)/2）、管理沟通（信息发布）、监督沟通（效果优化）。</div>
+              <div class="meta"><span class="m">⏱ 约4小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch15.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="15" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第15章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目风险管理</div>
+              <div class="desc">“把不确定变可控”：风险规划、识别、定性分析（概率影响矩阵）、定量分析（EMV/蒙特卡洛）、应对与监督，7个过程。</div>
+              <div class="meta"><span class="m">⏱ 约7小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d3" href="chapters/ch16.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="16" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第16章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">项目采购管理</div>
+              <div class="desc">“买东西的学问”：自制/外购决策、规划采购（合同类型选择）、实施采购（招标评标）与控制采购（合同收尾）。</div>
+              <div class="meta"><span class="m">⏱ 约5小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal" href="chapters/ch17.html" style="--pc:#db2777">
+              <span class="done" data-done-ch="17" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第17章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">项目干系人管理</div>
+              <div class="desc">“管好所有能影响项目的人”：识别干系人（权力/利益方格）、规划参与、管理与监督参与，让支持者更多、反对者更少。</div>
+              <div class="meta"><span class="m">⏱ 约4小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a></div><div class="part-band" id="part4"><span class="pb" style="--pc:#f59e0b;background:#f59e0b">第四部分 · 新一代项目管理</span><span class="pd">第18-19章 · 第4版新增重点：八大绩效域与配置变更管理</span></div>
+<div class="chapters-grid"><a class="ch-card reveal d1" href="chapters/ch18.html" style="--pc:#f59e0b">
+              <span class="done" data-done-ch="18" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第18章</span><span class="stars" title="考试重要度"><span class="stars">★★★★★<span class="off"></span></span></span></div>
+              <div class="t">项目绩效域</div>
+              <div class="desc">第4版最大更新：干系人、团队、开发方法和生命周期、规划、项目工作、交付、测量、不确定性——8个绩效域协同运作实现价值交付。</div>
+              <div class="meta"><span class="m">⏱ 约7小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch19.html" style="--pc:#f59e0b">
+              <span class="done" data-done-ch="19" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第19章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">配置与变更管理</div>
+              <div class="desc">“版本不乱、变更不乱”：配置管理（配置项/基线/三类库/审计）+ 变更管理（七步流程与CCB）+ 项目文档管理。</div>
+              <div class="meta"><span class="m">⏱ 约5小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a></div><div class="part-band" id="part5"><span class="pb" style="--pc:#059669;background:#059669">第五部分 · 高级与通用知识</span><span class="pd">第20-24章 · 项目集/组合、科学计算、组织管理与法律法规</span></div>
+<div class="chapters-grid"><a class="ch-card reveal d1" href="chapters/ch20.html" style="--pc:#059669">
+              <span class="done" data-done-ch="20" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第20章</span><span class="stars" title="考试重要度"><span class="stars">★★★★<span class="off">★</span></span></span></div>
+              <div class="t">高级项目管理</div>
+              <div class="desc">从单个项目抬头看：项目集管理（收益）、项目组合管理（战略）、组织级项目管理（OPM3）、量化管理（六西格玛）与CMMI等实践模型。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch21.html" style="--pc:#059669">
+              <span class="done" data-done-ch="21" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第21章</span><span class="stars" title="考试重要度"><span class="stars">★★★<span class="off">★★</span></span></span></div>
+              <div class="t">项目管理科学基础</div>
+              <div class="desc">给项目经理的“数学工具箱”：工程经济学（资金时间价值、现值年金、净现值、投资回收期）与运筹学（线性规划、排队论、博弈论等）。</div>
+              <div class="meta"><span class="m">⏱ 约6小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d3" href="chapters/ch22.html" style="--pc:#059669">
+              <span class="done" data-done-ch="22" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第22章</span><span class="stars" title="考试重要度"><span class="stars">★★<span class="off">★★★</span></span></span></div>
+              <div class="t">组织通用治理</div>
+              <div class="desc">组织层面的顶层设计：组织战略（类型与落地）、绩效考核（方法与流程）、转型升级（数字化转型等）。</div>
+              <div class="meta"><span class="m">⏱ 约2小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d1" href="chapters/ch23.html" style="--pc:#059669">
+              <span class="done" data-done-ch="23" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第23章</span><span class="stars" title="考试重要度"><span class="stars">★★★<span class="off">★★</span></span></span></div>
+              <div class="t">组织通用管理</div>
+              <div class="desc">组织日常经营的四大通用模块：人力资源管理（规划-招聘-培训-绩效-薪酬）、流程管理、知识管理、市场营销。</div>
+              <div class="meta"><span class="m">⏱ 约4小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a><a class="ch-card reveal d2" href="chapters/ch24.html" style="--pc:#059669">
+              <span class="done" data-done-ch="24" style="display:none">✓ 已掌握</span>
+              <div class="top"><span class="no">第24章</span><span class="stars" title="考试重要度"><span class="stars">★★★<span class="off">★★</span></span></span></div>
+              <div class="t">法律法规与标准规范</div>
+              <div class="desc">项目人的“法律底线+标准常识”：八大相关法律（合同、招投标、网络安全等）与系统与软件工程标准（基础/生存周期/质量测试）。</div>
+              <div class="meta"><span class="m">⏱ 约3小时</span><span class="m">🗺 思维导图</span><span class="m">✍ 章节自测</span></div>
+            </a></div>
+  </section>
+
+  <div class="cta-band reveal">
+    <div class="in">
+      <div>
+        <h3>准备好了吗？</h3>
+        <p>从「什么是项目」开始，一条路走到拿证 —— 现在就打开第一章。</p>
+      </div>
+      <a class="btn btn-primary" href="chapters/ch06.html">📖 开始学习第6章</a>
+    </div>
+  </div>
+</div>
+
+  <div class="wrap"><div class="footer">
+    <div class="f-grid">
+      <div class="f-col">
+        <div class="f-t">© 2026 软考高项学习平台 · 版权与使用声明</div>
+        <p>本站全部原创内容（通俗精讲、思维导图、考点速记、记忆口诀、自测题与页面设计）受《中华人民共和国著作权法》保护。<b>未经站长书面许可，任何单位或个人不得以任何形式复制、转载、镜像、采集、摘编本站内容，或将其用于任何商业用途。</b>未经授权使用本站原创内容的，站长有权依法要求删除并追究相应责任。如需授权转载、引用或合作，请事先与站长联系并取得书面许可。</p>
+      </div>
+      <div class="f-col">
+        <div class="f-t">数据来源与免责声明</div>
+        <p>本站知识体系依据官方教程《信息系统项目管理师教程（第4版）》（清华大学出版社）以<b>自己的语言整理编写</b>，不含教材原文段落，也不提供教材文件下载；思维导图基于官方目录与知识点原创绘制。本站为个人学习笔记，<b>非官方站点</b>，与考试组织机构无关联；考试政策类信息（时间/报名/合格标准）以<b>中国计算机技术职业资格网 www.ruankao.org.cn</b> 官方发布为准。如本站内容涉及您的合法权利且有标注不当之处，请联系站长，核实后将立即处理。</p>
+      </div>
+    </div>
+    <div class="f-note">学习进度仅保存在本机浏览器（localStorage）中，清除浏览器数据会重置进度。</div>
+  </div></div>
+</div>
+</div>
+<script>window.ROOT_REL="./";</script>
+<script src=".//assets/app.js?v=21"></script>
+
+
+</body>
+</html>
