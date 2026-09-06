@@ -10,12 +10,13 @@
 <meta name="author" content="软考高项学习平台">
 <meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23c084fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='13' fill='url(%23g)'/%3E%3Cpath d='M12 33 L20.5 20.5 L27 27 L36 14' stroke='white' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='36' cy='14' r='3.6' fill='%23FFD66B'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=40">
+<link rel="stylesheet" href="../assets/style.css?v=50">
 <script src="../assets/nav-data.js"></script>
 <script src="../assets/search-data.js"></script>
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="cursor-aura" aria-hidden="true"></div>
 <div class="layout">
 <aside class="sidebar" id="sidebar">
   <div class="brand">
@@ -230,6 +231,7 @@ markmap:
     <a class="next" href="ch06.html"><div class="dir">下一章</div><div class="pt">第6章 · 项目管理概论</div></a>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" crossorigin="anonymous"></script>
 <script>window.CH_NUM=5;window.PAGE_ID="ch5";window.QUIZ_DATA=[{"q": "在UML中，描述“参与者与系统功能之间交互关系”、常用于需求获取的图是（　）。", "options": ["类图", "用例图", "部署图", "构件图"], "a": 1, "ex": "用例图描述参与者（Actor）与用例（系统功能）的交互，是需求分析利器。类图描述静态结构，部署图描述物理布局，构件图描述软件部件组织。"}, {"q": "将程序看作“透明的盒子”，完全清楚程序内部结构和处理算法，按照程序内部逻辑设计测试用例，这种方法主要用于（　）。", "options": ["系统测试", "确认测试", "单元测试", "验收测试"], "a": 2, "ex": "白盒测试（结构测试）主要用于单元测试；黑盒测试（功能测试）主要用于集成测试、确认测试和系统测试。"}, {"q": "软件维护中，工作量占比最大的维护类型通常是（　）。", "options": ["纠错性维护", "适应性维护", "完善性维护", "预防性维护"], "a": 2, "ex": "统计上完善性维护（按用户要求增加功能、增强性能）占维护工作量比例最大。"}, {"q": "关于螺旋模型，其区别于瀑布模型的显著特征是（　）。", "options": ["文档驱动", "每个迭代周期都进行风险分析", "不需要需求分析", "只适用于小型项目"], "a": 1, "ex": "螺旋模型在瀑布模型基础上引入迭代，并在每个周期都进行风险分析，适合大型复杂高风险项目。"}];</script>
 
   <div class="wrap"><div class="footer">
@@ -249,7 +251,7 @@ markmap:
 </div>
 <script>window.ROOT_REL="..";</script>
 <button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
-<script src="../assets/app.js?v=40"></script>
+<script src="../assets/app.js?v=50"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.18" crossorigin="anonymous"></script>
