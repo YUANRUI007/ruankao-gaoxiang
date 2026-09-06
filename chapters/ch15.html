@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f5fa">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0c12">
 <title>软考高项学习平台 · 信息系统项目管理师（零基础）</title>
 <meta name="description" content="信息系统项目管理师（软考高级）零基础学习平台：24章思维导图、通俗精讲、考点速记与自测，内容依据官方教程第4版整理。">
 <meta name="author" content="软考高项学习平台">
 <meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>项</text></svg>">
-<link rel="stylesheet" href="../assets/style.css?v=30">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23c084fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='13' fill='url(%23g)'/%3E%3Cpath d='M12 33 L20.5 20.5 L27 27 L36 14' stroke='white' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='36' cy='14' r='3.6' fill='%23FFD66B'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=40">
 <script src="../assets/nav-data.js"></script>
 <script src="../assets/search-data.js"></script>
 </head>
@@ -17,7 +19,7 @@
 <div class="layout">
 <aside class="sidebar" id="sidebar">
   <div class="brand">
-    <div class="logo">项</div>
+    <div class="logo"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lgBrand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#8b5cf6"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#lgBrand)"/><path d="M12 33 L20.5 20.5 L27 27 L36 14" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="36" cy="14" r="3.6" fill="#FFD66B"/></svg></div>
     <div><div class="bt">软考高项学习平台</div><div class="bs">信息系统项目管理师 · 第4版教程</div></div>
   </div>
   <div class="side-search">
@@ -70,15 +72,25 @@
   <section class="sec" id="sec-map">
     <div class="sec-head"><span class="emoji">🗺️</span><h2>本章思维导图</h2><span class="tag">点击节点可展开/折叠 · 滚轮缩放 · 拖拽平移</span></div>
     <div class="map-box">
-      <div class="map-toolbar">
-        <span class="hint">基于官方教程第4版目录与知识点绘制</span>
-        <a data-zoomin title="放大">➕ 放大</a><a data-zoomout title="缩小">➖ 缩小</a><a data-fit>⤢ 适应窗口</a>
+      <div class="map-toolbar pro">
+        <span class="mt-brand">🗺 思维导图</span>
+        <span class="mt-sep"></span>
+        <span class="mt-group"><a data-zoomin title="放大（快捷键 +）">＋</a><a data-zoomout title="缩小（快捷键 −）">－</a><a data-reset title="缩放 100%">1:1</a><a data-fit title="适应画布（快捷键 0）">⤢ 适应</a></span>
+        <span class="mt-group"><a data-expand title="展开全部层级">展开</a><a data-fold title="折叠到二级骨架">折叠</a></span>
+        <span class="mt-group"><a data-fs title="全屏演示（快捷键 F）">⛶ 全屏</a></span>
+        <span class="mt-group"><a data-export-png title="导出 PNG 高清图片">PNG</a><a data-export-svg title="导出 SVG 矢量文件">SVG</a></span>
+        <span class="mt-info" data-mapinfo>…</span>
+        <span class="hint">基于官方教程第4版目录与知识点绘制 · 滚轮缩放 · 拖拽平移 · 点击圆点折叠/展开</span>
       </div>
       <div class="markmap map-svg"><script type="text/template">
 ---
 markmap:
-  maxWidth: 300
-  initialExpandLevel: 3
+  maxWidth: 260
+  initialExpandLevel: 4
+  spacingHorizontal: 110
+  spacingVertical: 16
+  duration: 420
+  colorFreezeLevel: 8
 ---
 # 第15章 项目风险管理
 ## 15.1 管理基础
@@ -207,9 +219,10 @@ markmap:
 </div>
 <script>window.ROOT_REL="..";</script>
 <button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
-<script src="../assets/app.js?v=30"></script>
-<script>window.markmap={autoLoader:{manual:false}};</script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18" crossorigin="anonymous"></script>
+<script src="../assets/app.js?v=40"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.18" crossorigin="anonymous"></script>
 
 </body>
 </html>
