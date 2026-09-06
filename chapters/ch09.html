@@ -10,12 +10,13 @@
 <meta name="author" content="软考高项学习平台">
 <meta name="copyright" content="© 2026 软考高项学习平台 · 原创学习笔记，未经书面许可禁止复制转载或商用">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23c084fc'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='13' fill='url(%23g)'/%3E%3Cpath d='M12 33 L20.5 20.5 L27 27 L36 14' stroke='white' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='36' cy='14' r='3.6' fill='%23FFD66B'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=40">
+<link rel="stylesheet" href="../assets/style.css?v=50">
 <script src="../assets/nav-data.js"></script>
 <script src="../assets/search-data.js"></script>
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+<div class="cursor-aura" aria-hidden="true"></div>
 <div class="layout">
 <aside class="sidebar" id="sidebar">
   <div class="brand">
@@ -198,6 +199,7 @@ markmap:
     <a class="next" href="ch10.html"><div class="dir">下一章</div><div class="pt">第10章 · 项目进度管理</div></a>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" crossorigin="anonymous"></script>
 <script>window.CH_NUM=9;window.PAGE_ID="ch9";window.QUIZ_DATA=[{"q": "项目范围管理中，把可交付成果和工作分解为更小组件的工具是（　）。", "options": ["需求跟踪矩阵", "WBS工作分解结构", "甘特图", "责任分配矩阵"], "a": 1, "ex": "WBS把项目和可交付成果逐步分解为工作包；甘特图是进度工具，需求跟踪矩阵用于需求追踪。"}, {"q": "范围基准的组成部分是（　）。", "options": ["范围说明书、WBS、WBS词典", "范围说明书、需求文件、WBS", "WBS、活动清单、里程碑", "范围说明书、需求跟踪矩阵、WBS"], "a": 0, "ex": "范围基准=批准的项目范围说明书+WBS+配套的WBS词典；需求文件不是基准的组成部分。"}, {"q": "客户在验收会上正式签署认可了系统某模块，该活动属于（　）。", "options": ["控制质量", "确认范围", "控制范围", "管理质量"], "a": 1, "ex": "确认范围是由客户或发起人对可交付成果进行正式验收；控制质量是团队内部对正确性的检查，通常在确认范围之前完成。"}, {"q": "项目团队为了让客户“惊喜”，未经客户要求自行增加了一项报表美化功能。这种行为称为（　）。", "options": ["范围蔓延", "镀金", "快速跟进", "标杆对照"], "a": 1, "ex": "镀金是团队未经要求擅自增加功能；范围蔓延通常指客户方不断提出新需求导致范围扩大。两者都应通过范围控制避免。"}];</script>
 
   <div class="wrap"><div class="footer">
@@ -217,7 +219,7 @@ markmap:
 </div>
 <script>window.ROOT_REL="..";</script>
 <button class="to-top" id="toTop" aria-label="返回顶部">↑</button>
-<script src="../assets/app.js?v=40"></script>
+<script src="../assets/app.js?v=50"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.18" crossorigin="anonymous"></script>
